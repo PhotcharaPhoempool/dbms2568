@@ -117,3 +117,28 @@ INSERT INTO contract (contract_id, pharmacy_id, pharm_co_id, drug_id, start_date
 (2, 1, 2, 2, '2025-06-01', '2025-12-31', 'Supply of Amoxicillin', 'Ms. Pim'),
 (3, 2, 1, 1, '2025-03-01', '2025-12-31', 'Paracetamol supply', 'Mr. Somchai'),
 (4, 2, 2, 3, '2025-07-01', '2025-12-31', 'Supply of Aspirin', 'Ms. Supaporn');
+
+-- 1 --
+SELECT doctor.name, patient.name
+FROM patient
+INNER JOIN doctor ON doctor.doctor_id = patient.doctor_id;
+
+-- 2 --
+SELECT pharmacy.name, drug.trade_name, sell.price
+FROM sell
+INNER JOIN drug ON drug.drug_id = sell.drug_id
+INNER JOIN pharmacy ON pharmacy.pharmacy_id = sell.pharmacy_id;
+
+-- 3 --
+SELECT patient.name, doctor.name, drug.trade_name, prescription.quantity
+FROM prescription
+INNER JOIN patient ON patient.patient_id = prescription.patient_id
+INNER JOIN doctor ON doctor.doctor_id = prescription.doctor_id
+INNER JOIN drug ON drug.drug_id = prescription.drug_id;
+
+-- 4 --
+SELECT pharmacy.name, pharm_co.name, drug.trade_name, contract.start_date, contract.end_date
+FROM contract
+INNER JOIN pharmacy ON contract.pharmacy_id = pharmacy.pharmacy_id
+INNER JOIN pharm_co ON contract.pharm_co_id = pharm_co.pharm_co_id
+INNER JOIN drug ON contract.drug_id = drug.drug_id;
