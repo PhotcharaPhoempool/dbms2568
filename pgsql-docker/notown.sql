@@ -92,3 +92,4 @@ INSERT INTO song (song_id, title, author, album_id) VALUES (3, 'Last Light', 'Ch
 INSERT INTO perform (perform_id, musician_id, song_id, perform_date, perform_place) VALUES (1, 1, 1, '2024-01-10', 'Central World Stage');
 INSERT INTO perform (perform_id, musician_id, song_id, perform_date, perform_place) VALUES (2, 2, 2, '2024-02-15', 'Nimman Open Arena');
 INSERT INTO perform (perform_id, musician_id, song_id, perform_date, perform_place) VALUES (3, 3, 3, '2024-03-20', 'Patong Beach Stage');
+
