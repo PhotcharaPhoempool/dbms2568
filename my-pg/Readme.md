@@ -117,7 +117,7 @@ Run a benchmark to see if your configuration remains stable under load.
 docker exec -it pg_30_lab pgbench -i -s 10 postgres
 
 # 2. Run the test for 60 seconds with 20 clients
-docker exec -it pg_30_lab pgbench -c 20 -j 2 -T 60 postgres
+docker exec -it pg_30_lab pgbench -c 20 -j 2 -T 60 -P 5 postgres
 ```
 
 ## Part 5: docker stats
